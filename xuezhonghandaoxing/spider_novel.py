@@ -76,12 +76,7 @@ class novel:
         title = self.get_novel_title()
         contents = self.get_content()
         self.file = open(title[2] + '.txt', 'w')
-        # self.file.write(contents)
-        for line in contents:
-            self.file.write(line)
-            if line.find("\xe3\x80\x82"):
-
-                self.file.write("\n")
+        self.file.write(contents)
 
     def get_novel_title(self):
         page = self.get_base_page()
@@ -99,11 +94,5 @@ class novel:
         return contents
 
 
-# base_url = 'http://www.biquku.com/0/761/'
-# certain_url = 'http://www.biquku.com/0/761/4133909.html'
 spider_novel = novel()
-# spider_novel.get_content()
-# spider_novel.get_title()
 spider_novel.write_file()
-# novel_title = spider_novel.get_novel_title()
-# print novel_title[0]
